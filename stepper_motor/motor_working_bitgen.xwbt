@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Mehta_FPGA\stepper_motor\motor_working.ncd
+OUTFILE=D:\Mehta_FPGA\stepper_motor\motor_working.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=D:\Mehta_FPGA\stepper_motor
+LICENSE=WebPack
+USER_INFO=212650071_0_0_132

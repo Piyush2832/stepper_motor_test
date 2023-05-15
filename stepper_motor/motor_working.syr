@@ -1,0 +1,409 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: motor_working.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "motor_working.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "motor_working"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : motor_working
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Mehta_FPGA\stepper_motor\motor_working.v" into library work
+Parsing module <motor_working>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <motor_working>.
+WARNING:HDLCompiler:872 - "D:\Mehta_FPGA\stepper_motor\motor_working.v" Line 30: Using initial value of distZ since it is never assigned
+WARNING:HDLCompiler:872 - "D:\Mehta_FPGA\stepper_motor\motor_working.v" Line 38: Using initial value of rpm since it is never assigned
+WARNING:HDLCompiler:413 - "D:\Mehta_FPGA\stepper_motor\motor_working.v" Line 51: Result of 25-bit expression is truncated to fit in 24-bit target.
+WARNING:HDLCompiler:413 - "D:\Mehta_FPGA\stepper_motor\motor_working.v" Line 69: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <motor_working>.
+    Related source file is "D:\Mehta_FPGA\stepper_motor\motor_working.v".
+    Found 1-bit register for signal <toggle>.
+    Found 1-bit register for signal <pin1>.
+    Found 1-bit register for signal <pin2>.
+    Found 16-bit register for signal <distB>.
+    Found 1-bit register for signal <stop>.
+    Found 1-bit register for signal <square_wave>.
+    Found 24-bit register for signal <counter>.
+    Found 24-bit adder for signal <counter[23]_GND_1_o_add_4_OUT> created at line 51.
+    Found 16-bit adder for signal <distB[15]_GND_1_o_add_8_OUT> created at line 69.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  45 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <motor_working> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 16-bit adder                                          : 1
+ 24-bit adder                                          : 1
+# Registers                                            : 7
+ 1-bit register                                        : 5
+ 16-bit register                                       : 1
+ 24-bit register                                       : 1
+# Multiplexers                                         : 1
+ 1-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <motor_working>.
+The following registers are absorbed into counter <distB>: 1 register on signal <distB>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <motor_working> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 16-bit up counter                                     : 1
+ 24-bit up counter                                     : 1
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+# Multiplexers                                         : 1
+ 1-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <motor_working> ...
+WARNING:Xst:1293 - FF/Latch <counter_13> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_14> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_15> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_16> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_17> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_18> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_19> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_20> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_21> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_22> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_23> has a constant value of 0 in block <motor_working>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block motor_working, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : motor_working.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 132
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 27
+#      LUT2                        : 1
+#      LUT3                        : 17
+#      LUT4                        : 13
+#      LUT5                        : 6
+#      LUT6                        : 8
+#      MUXCY                       : 27
+#      VCC                         : 1
+#      XORCY                       : 29
+# FlipFlops/Latches                : 34
+#      FD                          : 15
+#      FDE                         : 19
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 4
+#      IBUF                        : 1
+#      OBUF                        : 3
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              34  out of  11440     0%  
+ Number of Slice LUTs:                   74  out of   5720     1%  
+    Number used as Logic:                74  out of   5720     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     74
+   Number with an unused Flip Flop:      40  out of     74    54%  
+   Number with an unused LUT:             0  out of     74     0%  
+   Number of fully used LUT-FF pairs:    34  out of     74    45%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                           5
+ Number of bonded IOBs:                   5  out of    102     4%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 34    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.674ns (Maximum Frequency: 213.950MHz)
+   Minimum input arrival time before clock: 2.382ns
+   Maximum output required time after clock: 4.162ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.674ns (frequency: 213.950MHz)
+  Total number of paths / destination ports: 787 / 53
+-------------------------------------------------------------------------
+Delay:               4.674ns (Levels of Logic = 3)
+  Source:            counter_1 (FF)
+  Destination:       distB_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: counter_1 to distB_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.525   1.221  counter_1 (counter_1)
+     LUT6:I0->O            7   0.254   0.910  counter[23]_store[23]_equal_6_o<23>1 (counter[23]_store[23]_equal_6_o<23>)
+     LUT5:I4->O           16   0.254   1.182  _n0065_inv1_rstpot (_n0065_inv1_rstpot)
+     LUT3:I2->O            1   0.254   0.000  distB_0_dpot (distB_0_dpot)
+     FDE:D                     0.074          distB_0
+    ----------------------------------------
+    Total                      4.674ns (1.361ns logic, 3.313ns route)
+                                       (29.1% logic, 70.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              2.382ns (Levels of Logic = 2)
+  Source:            dir_ip (PAD)
+  Destination:       pin1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: dir_ip to pin1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.328   0.726  dir_ip_IBUF (dir_ip_IBUF)
+     LUT6:I5->O            1   0.254   0.000  pin1_dpot1 (pin1_dpot1)
+     FDE:D                     0.074          pin1
+    ----------------------------------------
+    Total                      2.382ns (1.656ns logic, 0.726ns route)
+                                       (69.5% logic, 30.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.162ns (Levels of Logic = 1)
+  Source:            square_wave (FF)
+  Destination:       square_wave (PAD)
+  Source Clock:      clk rising
+
+  Data Path: square_wave to square_wave
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.525   0.725  square_wave (square_wave_OBUF)
+     OBUF:I->O                 2.912          square_wave_OBUF (square_wave)
+    ----------------------------------------
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.674|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.08 secs
+ 
+--> 
+
+Total memory usage is 225912 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,12 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 15 12:19:28 2023
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "pin2" LOCATE = SITE "P24" LEVEL 1;
+COMP "clk" LOCATE = SITE "P87" LEVEL 1;
+COMP "square_wave" LOCATE = SITE "P22" LEVEL 1;
+COMP "dir_ip" LOCATE = SITE "P17" LEVEL 1;
+COMP "pin1" LOCATE = SITE "P21" LEVEL 1;
+SCHEMATIC END;
+
